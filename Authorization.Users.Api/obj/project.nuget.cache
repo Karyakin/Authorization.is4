@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "L/FK30yio789Kqxx/L0a//q6dG3DmbWnPydqSc1zWMRMbGMzG3bFDzSBHe09taMSFHTB0PiJhWO9NWgJG5Awmw==",
+  "dgSpecHash": "7FkTQ57/tkXa13Q2GemE03tocTVJlp3bEoigl5YYMtuK4Qeh7FxDtAHeAfgM3GB4naPzDLXDXT2S6dGV9Heijw==",
   "success": true,
   "projectFilePath": "C:\\Users\\37544\\Projects\\Authorization\\Authorization.Users.Api\\Authorization.Users.Api.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\37544\\.nuget\\packages\\identitymodel\\6.0.0\\identitymodel.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using IdentityModel;
+using IdentityModel.Client;
 
 namespace Authorization.Users.Api.Controllers
 {
@@ -22,15 +24,74 @@ namespace Authorization.Users.Api.Controllers
             return View();
         }
         
-        [Route("[action]")]
+        /*[Route("[action]")]
         public async Task<IActionResult> GetOrders()
         {
+            // retrieve to IdentityServer
             var authClient = _httpClientFactory.CreateClient();
-            var response = await authClient.GetAsync("https://localhost:5001/site/GetSecrets");
+            var discoveryDocument = await authClient.GetDiscoveryDocumentAsync("https://localhost:6001");
+
+            var tokenResponse = await authClient.RequestClientCredentialsTokenAsync(
+                new ClientCredentialsTokenRequest
+                {
+                    Address = discoveryDocument.TokenEndpoint,
+                    ClientId = "client_id",
+                    ClientSecret = "client_secret",
+                    Scope = "OrdersApi"
+                });
+
+
+            // retrieve to Orders
+            var ordersClient = _httpClientFactory.CreateClient();
+
+            ordersClient.SetBearerToken(tokenResponse.AccessToken);
+
+            var response = await ordersClient.GetAsync("https://localhost:5001/site/GetSecrets");
+
+            if (!response.IsSuccessStatusCode)
+            {
+                ViewBag.Message = response.StatusCode.ToString();
+                return View();
+            }
+
             var message = await response.Content.ReadAsStringAsync();
 
             ViewBag.Message = message;
-            
+            return View();
+        }*/
+        
+        [Route("[action]")]
+        public async Task<IActionResult> GetOrders()
+        {
+            // retrieve to IdentityServer
+            var authClient = _httpClientFactory.CreateClient();
+            var discoveryDocument = await authClient.GetDiscoveryDocumentAsync("https://localhost:6001");
+
+            var tokenResponse = await authClient.RequestClientCredentialsTokenAsync(
+                new ClientCredentialsTokenRequest
+                {
+                    Address = discoveryDocument.TokenEndpoint,
+                    ClientId = "client_id",
+                    ClientSecret = "client_secret",
+                    Scope = "OrdersApi",
+                });
+
+
+            // retrieve to Orders
+            var ordersClient = _httpClientFactory.CreateClient();
+
+            ordersClient.SetBearerToken(tokenResponse.AccessToken);
+
+            var response = await ordersClient.GetAsync("https://localhost:5001/site/GetSecrets");
+
+            if (!response.IsSuccessStatusCode)
+            {
+                ViewBag.Message = response.StatusCode.ToString();
+                return View();
+            }
+            var message = await response.Content.ReadAsStringAsync();
+
+            ViewBag.Message = message;
             return View();
         }
     }

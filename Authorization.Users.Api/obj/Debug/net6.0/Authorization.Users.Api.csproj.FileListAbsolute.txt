@@ -22,3 +22,5 @@ C:\Users\37544\Projects\Authorization\Authorization.Users.Api\obj\Debug\net6.0\r
 C:\Users\37544\Projects\Authorization\Authorization.Users.Api\obj\Debug\net6.0\Authorization.Users.Api.pdb
 C:\Users\37544\Projects\Authorization\Authorization.Users.Api\obj\Debug\net6.0\Authorization.Users.Api.genruntimeconfig.cache
 C:\Users\37544\Projects\Authorization\Authorization.Users.Api\obj\Debug\net6.0\ref\Authorization.Users.Api.dll
+C:\Users\37544\Projects\Authorization\Authorization.Users.Api\bin\Debug\net6.0\IdentityModel.dll
+C:\Users\37544\Projects\Authorization\Authorization.Users.Api\obj\Debug\net6.0\Authorization.Users.Api.csproj.CopyComplete

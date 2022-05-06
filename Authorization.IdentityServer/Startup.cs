@@ -22,6 +22,12 @@ namespace Authorization.IdentityServer
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddIdentityServer()
+                .AddInMemoryIdentityResources(Config.GetIdentityResources())// когда клиенту выдается емэйл, телефон,
+                .AddInMemoryClients(Config.GetClients())
+                .AddInMemoryApiResources(Config.GetApiResources())
+                .AddInMemoryApiScopes(Config.GetApiScopes())
+                .AddDeveloperSigningCredential();
             services.AddControllersWithViews();
         }
 
@@ -34,8 +40,7 @@ namespace Authorization.IdentityServer
 
             app.UseRouting();
 
-            app.UseAuthentication();
-            app.UseAuthorization();
+            app.UseIdentityServer();
 
             app.UseEndpoints(endpoints =>
             {

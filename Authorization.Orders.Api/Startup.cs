@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Authorization.Orders.Api
 {
@@ -22,6 +24,17 @@ namespace Authorization.Orders.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, config =>
+                {
+                    config.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateAudience = false
+                    };
+                    config.Authority = "https://localhost:6001";
+                    config.Audience = "OrdersApi";// какую область мы представляем для защиты
+                });
+                
             services.AddControllersWithViews();
         }
 

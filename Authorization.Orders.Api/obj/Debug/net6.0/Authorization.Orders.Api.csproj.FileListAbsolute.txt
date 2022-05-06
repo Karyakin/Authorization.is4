@@ -22,3 +22,11 @@ C:\Users\37544\Projects\Authorization\Authorization.Orders.Api\obj\Debug\net6.0\
 C:\Users\37544\Projects\Authorization\Authorization.Orders.Api\obj\Debug\net6.0\Authorization.Orders.Api.pdb
 C:\Users\37544\Projects\Authorization\Authorization.Orders.Api\obj\Debug\net6.0\Authorization.Orders.Api.genruntimeconfig.cache
 C:\Users\37544\Projects\Authorization\Authorization.Orders.Api\obj\Debug\net6.0\ref\Authorization.Orders.Api.dll
+C:\Users\37544\Projects\Authorization\Authorization.Orders.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\37544\Projects\Authorization\Authorization.Orders.Api\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\37544\Projects\Authorization\Authorization.Orders.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\37544\Projects\Authorization\Authorization.Orders.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\37544\Projects\Authorization\Authorization.Orders.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\37544\Projects\Authorization\Authorization.Orders.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\37544\Projects\Authorization\Authorization.Orders.Api\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\37544\Projects\Authorization\Authorization.Orders.Api\obj\Debug\net6.0\Authorization.Orders.Api.csproj.CopyComplete

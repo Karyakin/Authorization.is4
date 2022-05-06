@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Authorization.Orders.Api.Controllers
 {
@@ -15,6 +16,7 @@ namespace Authorization.Orders.Api.Controllers
             return View();
         }
         [Route("[action]")]
+        [Authorize]
         public string GetSecrets()
         {
              return "Secret string from Order api";
