@@ -8,7 +8,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
 namespace Authorization.Users.Api
 {
     public class Startup
@@ -22,6 +21,7 @@ namespace Authorization.Users.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHttpClient();
             services.AddControllersWithViews();
         }
 

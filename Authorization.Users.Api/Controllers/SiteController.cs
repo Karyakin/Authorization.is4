@@ -2,20 +2,35 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace Authorization.Users.Api.Controllers
 {
+    [Route("[controller]")]
     public class SiteController : Controller
     {
-        
+        private readonly IHttpClientFactory _httpClientFactory;
+
+        public SiteController(IHttpClientFactory httpClientFactory)
+        {
+            _httpClientFactory = httpClientFactory;
+        }
+       [Route("[action]")]
         public IActionResult Index()
         {
             return View();
         }
-        public IActionResult GetOrders()
+        
+        [Route("[action]")]
+        public async Task<IActionResult> GetOrders()
         {
-            ViewBag.Massage = "Test";
+            var authClient = _httpClientFactory.CreateClient();
+            var response = await authClient.GetAsync("https://localhost:5001/site/GetSecrets");
+            var message = await response.Content.ReadAsStringAsync();
+
+            ViewBag.Message = message;
+            
             return View();
         }
     }
